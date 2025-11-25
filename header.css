@@ -1,0 +1,82 @@
+@font-face{
+  font-family: "Neue Einstellung";
+  src:url("Hanken\ Design\ Co\ -\ Neue\ Einstellung\ Bold.otf")
+}
+@font-face{
+  font-family: "Neue-regular";
+  src:url("Hanken\ Design\ Co\ -\ Neue\ Einstellung\ Regular.otf")
+}
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:Neue Einstellung, sans-serif;
+}
+.header-links-container{
+  border-bottom:1px solid #ededed;
+}
+.header-links{
+  font-family:Neue-regular;
+  display:flex;
+  justify-content:flex-end;
+}
+.header-links a{
+  text-decoration:none;
+  color:#777777;
+  padding:6px 8px 7px;
+  transition:color 0.15s;
+}
+.header-links a:hover{
+  color:black;
+}
+.header-links-container,.nav-links-container{
+  padding-left:120px;
+  padding-right:120px;
+}
+.nav-links-container{
+  background-color:white;
+  padding-top:10px;
+  position:sticky;
+  top:0px;
+  z-index:1000;
+}
+.logo-css{
+  width:200px;
+  height:50px;
+}
+.nav-links{
+  display:flex;
+}
+.nav-bar{
+  display:flex;
+  align-items:center;
+  flex:1;
+  margin-left:50px;
+}
+.nav-bar a{
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+  font-size:15px;
+  padding-left:13px;
+  padding-right:13px;
+}
+.right-navsection{
+  display:flex;
+  align-items:center;
+}
+.nav-logo-button{
+  background-color:transparent;
+  border:none;
+  padding-left:15px;
+}
+.nav-logo{
+  width:25px; 
+  height:25px; 
+  color:black;
+}
+.nav-logo:hover, .nav-bar a:hover{
+  color:#ed9492;
+}

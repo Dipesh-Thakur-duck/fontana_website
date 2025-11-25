@@ -1,0 +1,121 @@
+.ad-container{
+  position:relative;
+  padding-left:120px;
+  padding-right:120px;
+  display:flex;
+  justify-content:center;
+}
+.ad-images{
+  height:550px;
+}
+.ad-changer{
+  position:absolute;
+  bottom:10px;
+  display:flex;
+  gap:10px;
+}
+.ad-changer1,.ad-changer2{
+  border:none;
+  background-color:white;
+  cursor:pointer;
+  transition:background-color 0.5s ease, width 0.5s ease, opacity 0.5s ease;
+  width:10px;
+  height:4px;
+}
+.ad-changer1:hover, .ad-changer2:hover{
+  background-color:black;
+}
+.ad-changer1.hide, .ad-changer2.hide{
+  opacity:0;
+}
+.ad-changer1:hover,.ad-changer2:hover{
+  background-color:black;
+}
+.ad-change-active{
+  width:30px;
+}
+.ad-changer-arrow{
+  display:flex;
+  justify-content:space-between;
+  position:absolute;
+  top:50%;
+  left:500px;
+  right:500px;
+}
+.ad-changer-left,.ad-changer-right{
+  border:none;
+  background-color:transparent;
+  font-size:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:rgb(173, 173, 173);
+  cursor:pointer;
+  padding-left:10px;
+  padding-right:10px;
+  transition:background-color 0.15s, color 0.15s;
+}
+.ad-changer-left:hover,.ad-changer-right:hover{
+  background-color:black;
+  color:white;
+}
+.website-slogan{
+  text-align:center;
+  margin-top:60px;
+  margin-bottom:30px;
+  font-size:40px;
+}
+.product-category{
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding-left:120px;
+  padding-right:120px;
+}
+.product-category img{
+  width:400px;
+  object-fit:cover;
+  transition: transform 0.5s ease;
+}
+.product-category-image-eyes,.product-category-image-face,.product-category-image-lips{
+  width:400px;
+  height:400px;
+  background-size:contain;
+  background-position:center;
+  background-repeat: no-repeat;
+  transition: background-size 0.15s;
+}
+.product-category-image-eyes{
+  background-image: url('./pic1.webp');
+}
+.product-category-image-face{
+  background-image: url('./pic2.webp');
+}
+.product-category-image-lips{
+  background-image: url('./pic3.webp');
+}
+.category-eyes:hover .product-category-image-eyes, .category-face:hover .product-category-image-face, .category-lips:hover .product-category-image-lips{
+  background-size:120%;
+}
+.product-category-name{
+  margin-top:20px;
+  font-size:20px;
+}
+.product-category-slogan{
+  font-family:Neue-regular;
+  color:#777777;
+  font-size:20px;
+  margin-bottom:30px;
+}
+.product-category-discoverbtn-eyes, .product-category-discoverbtn-face, .product-category-discoverbtn-lips{
+  background-color:#ed9492;
+  color:white;
+  border:none;
+  font-weight:bold;
+  font-size:14px;
+  padding:13px 15px;
+}
+.product-category-discoverbtn-eyes:hover, .product-category-discoverbtn-lips:hover, .product-category-discoverbtn-face:hover{
+  background-color:black;
+}
