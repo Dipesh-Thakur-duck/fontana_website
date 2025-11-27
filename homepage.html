@@ -228,8 +228,12 @@
           <p class="footer-col1-title">Fontana Contarini</p>
           <p class="footer-col1-info">Italian brand with over 40 years of experience in the cosmetics production and distribution</p>
           <p class="footer-col1-title2">Follow Us: </p>
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.facebook.com/fontanacontarinime" target="blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/fontanacontarinime/" target="blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
         <div class="footer-col2">
           <p class="footer-col2-title">Contact Us</p>
@@ -249,6 +253,32 @@
       </div>
     </div>
     <div class="copy-right-disclaimer">&copy; 2021 Fontana Contarini Middle East All Rights Reserved.</div>
+    <div class="currency-flag">
+      <span class="flags flags-United-Arab-Emirates"></span>
+      AED <span class="arrow-flag">&#9662;</span>
+      <div class="currency-options">
+        <div class="uae-currency">
+          <span class="flags flags-United-Arab-Emirates"></span>
+          <span>United Arab Emirates Dirham</span>
+        </div>
+        <div class="us-currency">
+          <span class="flags flags-United-States"></span>
+          <span>US Dollar</span>
+        </div>
+        <div class="kuwait-currency">
+          <span class="flags flags-Kuwait"></span>
+          <span>Kuwaiti Dinar</span>
+        </div>
+        <div class="saudi-currency">
+          <span class="flags flags-Saudi"></span>
+          <span>Saudi Riyal</span>
+        </div>
+        <div class="bahrain-currency">
+          <span class="flags flags-Bahrain"></span>
+          <span>Bahraini Dinar</span>
+        </div>
+      </div>
+    </div>
     <script>
       const slides = document.querySelectorAll('.slide');
       const prevBtn = document.querySelector('.prev');
@@ -322,6 +352,19 @@
         });
       });
 
+      let currencyBtn = document.querySelector('.currency-flag');
+      let currencyDiv = document.querySelector('.currency-options');
+
+      currencyBtn.addEventListener('click',(e)=>{
+        currencyBtn.style.borderColor= '#88bfff';
+        e.stopPropagation();
+        currencyDiv.style.opacity = 1;
+        
+      })
+      document.addEventListener('click',()=>{
+        currencyBtn.style.borderColor = '#dbdbdb';
+        currencyDiv.style.opacity = 0;
+      })
     </script>
   </body>
 </html>
