@@ -295,8 +295,8 @@ background-color:black;
   margin-bottom:100px;
 }
 .flags{
-  width:24px;
-  height:16px;
+  width:30px;
+  height:20px;
   margin-right:7px;
   background-image: url("currency-flags.png");
   display:inline-block;
@@ -305,13 +305,13 @@ background-color:black;
   background-position:-445px -5px;
 }
 .flags-United-States{
-  background-position:-370px -5px;
+  background-position:-365px -5px;
 }
 .flags-Kuwait{
-  background-position:-285px -248px;
+  background-position:-285px -245px;
 }
 .flags-Saudi{
-  background-position:-329px -96px;
+  background-position:-325px -95px;
 }
 .flags-Bahrain{
   background-position:-125px -455px;
@@ -327,6 +327,7 @@ background-color:black;
   border:1px solid #dbdbdb;
   padding:15px;
   font-size:14px;
+  background-color:white;
 }
 .arrow-flag{
   margin-left:10px;
@@ -340,9 +341,47 @@ background-color:black;
 .currency-options{
   background-color:white;
   position:absolute;
-  top:-210px;
-  width:250px;
+  top:-250px;
+  width:260px;
   border:2px solid #F6F6F6;
   opacity:0;
   transition: opacity 0.15s;
+  pointer-events:none;
+}
+
+/*scroll to the top*/
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover {
+  background-color: #ed9492;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top svg {
+  width: 35px;
+  height: 35px;
+}
+.currency-shortform{
+  color:#777777;
+  font-size:18px;
 }

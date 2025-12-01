@@ -152,7 +152,8 @@
               c0.1,0.8,0.2,1.6,0.2,2.4h1.6c0-0.8-0.1-1.6-0.2-2.4H20c0.2,0,0.4,0.2,0.4,0.5l2,14C22.4,22.3,22.2,22.4,22,22.4z"></path>
             </svg>
           </button>
-          <span style="color:#777777; font-size:18px;">98.00 د.إ AED</span>
+          <span style="color:#777777; font-size:18px;" class="price">98.00</span>
+          <span class="currency-shortform">د.إAED</span>
         </div>
         <div class="product-3">
           <img src="./trending-images/skin_tint.png">
@@ -169,7 +170,8 @@
               c0.1,0.8,0.2,1.6,0.2,2.4h1.6c0-0.8-0.1-1.6-0.2-2.4H20c0.2,0,0.4,0.2,0.4,0.5l2,14C22.4,22.3,22.2,22.4,22,22.4z"></path>
             </svg>
           </button>
-          <span style="color:#777777; font-size:18px;">162.00 د.إ AED</span>
+          <span style="color:#777777; font-size:18px;" class="price">162.00</span>
+          <span class="currency-shortform">د.إAED</span>
         </div>
         <div class="product-5">
           <img src="./trending-images/sunshinedust.jpg">
@@ -182,7 +184,8 @@
               c0.1,0.8,0.2,1.6,0.2,2.4h1.6c0-0.8-0.1-1.6-0.2-2.4H20c0.2,0,0.4,0.2,0.4,0.5l2,14C22.4,22.3,22.2,22.4,22,22.4z"></path>
             </svg>
           </button>
-          <span style="color:#777777; font-size:18px;">265.00 د.إ AED</span>
+          <span style="color:#777777; font-size:18px;" class="price">265.00</span>
+          <span class="currency-shortform">د.إAED</span>
         </div>
         <div class="product-6">
           <img src="./trending-images/eyeshadow.jpg">
@@ -195,7 +198,8 @@
               c0.1,0.8,0.2,1.6,0.2,2.4h1.6c0-0.8-0.1-1.6-0.2-2.4H20c0.2,0,0.4,0.2,0.4,0.5l2,14C22.4,22.3,22.2,22.4,22,22.4z"></path>
             </svg>
           </button>
-          <span style="color:#777777; font-size:18px;">94.00 د.إ AED</span>
+          <span style="color:#777777; font-size:18px;" class="price">94.00</span>
+          <span class="currency-shortform">د.إAED</span>
         </div>
       </div>
     </div>
@@ -254,35 +258,150 @@
     </div>
     <div class="copy-right-disclaimer">&copy; 2021 Fontana Contarini Middle East All Rights Reserved.</div>
     <div class="currency-flag">
-      <span class="flags flags-United-Arab-Emirates"></span>
-      AED <span class="arrow-flag">&#9662;</span>
+      <span class="flags current-country"></span>
+      <span class="current-currency"></span> 
+      <span class="arrow-flag">&#9662;</span>
       <div class="currency-options">
-        <div class="uae-currency">
+        <div class="uae-currency" onclick="
+            currentCountryAdd('UAE');
+          ">
           <span class="flags flags-United-Arab-Emirates"></span>
-          <span>United Arab Emirates Dirham</span>
+          <span class="currency-name">United Arab Emirates Dirham</span>
         </div>
-        <div class="us-currency">
+        <div class="us-currency" onclick="
+            currentCountryAdd('US');
+          ">
           <span class="flags flags-United-States"></span>
-          <span>US Dollar</span>
+          <span class="currency-name">US Dollar</span>
         </div>
-        <div class="kuwait-currency">
+        <div class="kuwait-currency" onclick="
+            currentCountryAdd('Kuwait');
+          ">
           <span class="flags flags-Kuwait"></span>
-          <span>Kuwaiti Dinar</span>
+          <span class="currency-name">Kuwaiti Dinar</span>
         </div>
-        <div class="saudi-currency">
+        <div class="saudi-currency" onclick="
+            currentCountryAdd('Saudi');
+          ">
           <span class="flags flags-Saudi"></span>
-          <span>Saudi Riyal</span>
+          <span class="currency-name">Saudi Riyal</span>
         </div>
-        <div class="bahrain-currency">
+        <div class="bahrain-currency" onclick="
+            currentCountryAdd('Bahrain');
+          ">
           <span class="flags flags-Bahrain"></span>
-          <span>Bahraini Dinar</span>
+          <span class="currency-name">Bahraini Dinar</span>
         </div>
       </div>
     </div>
+    <button id="scrollToTopBtn" class="scroll-to-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
     <script>
+      const countryClass = {
+        'UAE': {
+          country:'flags-United-Arab-Emirates',
+          currency: 'AED',
+          container: 'uae-currency',
+          rate:3.67,
+          currencyShortform: 'د.إAED'
+        },
+        'US': {
+          country:'flags-United-States',
+          currency: 'US Dollar',
+          container: 'us-currency',
+          rate:1,
+          currencyShortform: 'USD'
+        },
+        'Kuwait':{
+          country:'flags-Kuwait',
+          currency:'Kuwaiti Dinar',
+          container: 'kuwait-currency',
+          rate:0.31,
+          currencyShortform:'KWD'
+        },
+        'Saudi':{
+          country:'flags-Saudi',
+          currency: 'Saudi Riyal',
+          container: 'saudi-currency',
+          rate:3.75,
+          currencyShortform:'SAR'
+        },
+        'Bahrain':{
+          country:'flags-Bahrain',
+          currency:'Bahraini Dinar',
+          container: 'bahrain-currency',
+          rate:0.38,
+          currencyShortform:'BHD'
+        }
+      }
       const slides = document.querySelectorAll('.slide');
       const prevBtn = document.querySelector('.prev');
       const nextBtn = document.querySelector('.next');
+
+      const currentCountry = document.querySelector('.current-country');
+      const currentCurrency = document.querySelector('.current-currency');
+      const prices = document.querySelectorAll('.price');
+      const currencyShortforms = document.querySelectorAll('.currency-shortform')
+      const initialCurrency = 'UAE';
+      let currentCurrencyName = initialCurrency;
+
+      const pricesInUSD = [];
+      prices.forEach(price=>{
+        const initialPrice = parseFloat(price.innerHTML);
+        let priceInUSD = initialPrice / countryClass[initialCurrency].rate;
+
+        pricesInUSD.push(priceInUSD);
+      })
+       currentCountryAdd('UAE');
+      function currentCountryAdd(countryName){
+
+        currentCurrencyName = countryName;
+
+        const allCurrencyNames = document.querySelectorAll('.currency-name');
+        allCurrencyNames.forEach(element =>{
+          element.style.fontWeight = 'normal';
+        })
+
+        const oldCurrency = currentCurrency.innerHTML;
+
+        currentCountry.classList.add(countryClass[countryName].country);
+        currentCurrency.innerHTML = `${countryClass[countryName].currency}`;
+        const container = document.querySelector(`.${countryClass[countryName].container}`);
+        const highlightCurrency = container.querySelector('.currency-name');
+        highlightCurrency.style.fontWeight = 'bold';
+
+        prices.forEach((price,index)=>{
+          const convertedPrice = pricesInUSD[index] * countryClass[countryName].rate;
+          price.innerHTML = convertedPrice.toFixed(2);
+        });
+
+        currencyShortforms.forEach(shortform =>{
+          shortform.innerHTML = countryClass[countryName].currencyShortform;
+        });
+      }
+
+      let currencyBtn = document.querySelector('.currency-flag');
+      let currencyDiv = document.querySelector('.currency-options');
+      const arrowFlag = document.querySelector('.arrow-flag');
+
+      currencyBtn.addEventListener('click',(e)=>{
+        currencyBtn.style.borderColor= '#88bfff';
+        e.stopPropagation();
+        currencyDiv.style.opacity = 1;
+        currencyDiv.style.pointerEvents = 'auto';
+        arrowFlag.innerHTML = '&#9652;';
+        
+      })
+      document.addEventListener('click',()=>{
+        currencyBtn.style.borderColor = '#dbdbdb';
+        currencyDiv.style.opacity = 0;
+        currencyDiv.style.pointerEvents = 'none';
+        arrowFlag.innerHTML = '&#9662;';
+
+      })
 
       let index = 0;
 
@@ -352,19 +471,24 @@
         });
       });
 
-      let currencyBtn = document.querySelector('.currency-flag');
-      let currencyDiv = document.querySelector('.currency-options');
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-      currencyBtn.addEventListener('click',(e)=>{
-        currencyBtn.style.borderColor= '#88bfff';
-        e.stopPropagation();
-        currencyDiv.style.opacity = 1;
-        
-      })
-      document.addEventListener('click',()=>{
-        currencyBtn.style.borderColor = '#dbdbdb';
-        currencyDiv.style.opacity = 0;
-      })
+      // Show button when user scrolls down 300px from the top
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+
+      // Scroll to top when button is clicked
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
     </script>
   </body>
 </html>

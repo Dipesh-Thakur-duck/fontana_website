@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="currency-change.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="price">10</div>
+  <div class="currency-flag">
+    <span class="flags current-country"></span>
+    <span class="current-currency"></span> 
+    <span class="arrow-flag">&#9662;</span>
+    <div class="currency-options">
+      <div class="uae-currency" onclick="
+          currentCountryAdd('UAE');
+        ">
+        <span class="flags flags-United-Arab-Emirates"></span>
+        <span class="currency-name">United Arab Emirates Dirham</span>
+      </div>
+      <div class="us-currency" onclick="
+          currentCountryAdd('US');
+        ">
+        <span class="flags flags-United-States"></span>
+        <span class="currency-name">US Dollar</span>
+      </div>
+      <div class="kuwait-currency" onclick="
+          currentCountryAdd('Kuwait');
+        ">
+        <span class="flags flags-Kuwait"></span>
+        <span class="currency-name">Kuwaiti Dinar</span>
+      </div>
+      <div class="saudi-currency" onclick="
+          currentCountryAdd('Saudi');
+        ">
+        <span class="flags flags-Saudi"></span>
+        <span class="currency-name">Saudi Riyal</span>
+      </div>
+      <div class="bahrain-currency" onclick="
+          currentCountryAdd('Bahrain');
+        ">
+        <span class="flags flags-Bahrain"></span>
+        <span class="currency-name">Bahraini Dinar</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const countryClass = {
+      'UAE': {
+        country:'flags-United-Arab-Emirates',
+        currency: 'AED',
+        container: 'uae-currency',
+        rate:3.67
+      },
+      'US': {
+        country:'flags-United-States',
+        currency: 'US Dollar',
+        container: 'us-currency',
+        rate:1
+      },
+      'Kuwait':{
+        country:'flags-Kuwait',
+        currency:'Kuwaiti Dinar',
+        container: 'kuwait-currency',
+        rate:0.31
+      },
+      'Saudi':{
+        country:'flags-Saudi',
+        currency: 'Saudi Riyal',
+        container: 'saudi-currency',
+        rate:3.75
+      },
+      'Bahrain':{
+        country:'flags-Bahrain',
+        currency:'Bahraini Dinar',
+        container: 'bahrain-currency',
+        rate:0.38
+      }
+    }
+    const currentCountry = document.querySelector('.current-country');
+    const currentCurrency = document.querySelector('.current-currency');
+    const price = document.querySelector('.price');
+
+    const initialPrice = parseFloat(price.innerHTML);
+    const initialCurrency = 'UAE';
+
+    let priceInUSD = initialPrice / countryClass[initialCurrency].rate;
+
+    function currentCountryAdd(countryName){
+      const allCurrencyNames = document.querySelectorAll('.currency-name');
+      allCurrencyNames.forEach(element =>{
+        element.style.fontWeight = 'normal';
+      })
+
+      const oldCurrency = currentCurrency.innerHTML;
+
+      currentCountry.classList.add(countryClass[countryName].country);
+      currentCurrency.innerHTML = `${countryClass[countryName].currency}`;
+      const container = document.querySelector(`.${countryClass[countryName].container}`);
+      const highlightCurrency = container.querySelector('.currency-name');
+      highlightCurrency.style.fontWeight = 'bold';
+
+      const convertedPrice = priceInUSD * countryClass[countryName].rate;
+      price.innerHTML = convertedPrice.toFixed(2);
+    }
+    currentCountryAdd('UAE');
+
+    let currencyBtn = document.querySelector('.currency-flag');
+    let currencyDiv = document.querySelector('.currency-options');
+
+    currencyBtn.addEventListener('click',(e)=>{
+      currencyBtn.style.borderColor= '#88bfff';
+      e.stopPropagation();
+      currencyDiv.style.opacity = 1;
+    })
+    document.addEventListener('click',()=>{
+      currencyBtn.style.borderColor = '#dbdbdb';
+      currencyDiv.style.opacity = 0;
+    })
+
+  </script>
+</body>
+</html>

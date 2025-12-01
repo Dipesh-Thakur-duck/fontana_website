@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Helvetica-Neue';
+  src: url('../HelveticaNeueMedium.otf');
+}
+.flags{
+  width:30px;
+  height:20px;
+  margin-right:7px;
+  background-image: url("../currency-flags.png");
+  display:inline-block;
+}
+.flags-United-Arab-Emirates{
+  background-position:-445px -5px;
+}
+.flags-United-States{
+  background-position:-365px -5px;
+}
+.flags-Kuwait{
+  background-position:-285px -245px;
+}
+.flags-Saudi{
+  background-position:-325px -95px;
+}
+.flags-Bahrain{
+  background-position:-125px -455px;
+}
+.currency-flag{
+  position:fixed;
+  bottom:10px;
+  left:5px;
+  border-radius:3px;
+  color:#403F3F;
+  cursor:pointer;
+  font-family:Helvetica-Neue;
+  border:1px solid #dbdbdb;
+  padding:15px;
+  font-size:14px;
+}
+.arrow-flag{
+  margin-left:10px;
+}
+.currency-options div{
+  padding:10px;
+}
+.currency-options div:hover{
+  background-color:#F6F6F6;
+}
+.currency-options{
+  background-color:white;
+  position:absolute;
+  top:-250px;
+  width:260px;
+  border:2px solid #F6F6F6;
+  opacity:0;
+  transition: opacity 0.15s;
+}
